@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
 
   images: {
-    domains: ["spoonacular.com"],
+    domains: ["img.spoonacular.com"],
   },
   compiler: {
     styledComponents: true,

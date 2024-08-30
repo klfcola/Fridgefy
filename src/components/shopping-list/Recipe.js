@@ -1,7 +1,7 @@
-import { removeFromMyRecipes } from '@/store/slicers/myReceips'
-import { useDispatch } from 'react-redux'
-import styled from 'styled-components'
-import { AiFillDelete } from 'react-icons/ai'
+import { removeFromMyRecipes } from "@/store/slicers/myReceips";
+import { useDispatch } from "react-redux";
+import styled from "styled-components";
+import { AiFillDelete } from "react-icons/ai";
 
 //Style
 const RecipesList = styled.li`
@@ -16,7 +16,8 @@ const RecipesList = styled.li`
   box-shadow: 0 1px 5px #344e41;
   @media (max-width: 450px) {
     width: 80vw;
-`
+  }
+`;
 
 const RecipesTitle = styled.p`
   font-size: 25px;
@@ -28,7 +29,7 @@ const RecipesTitle = styled.p`
   &:hover {
     color: #d7f5df;
   }
-`
+`;
 
 const RemoveBtn = styled.button`
   font-size: 25px;
@@ -36,20 +37,20 @@ const RemoveBtn = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-`
+`;
 
 const RemoveImg = styled(AiFillDelete)`
   position: relative;
   top: 3px;
-`
+`;
 
 function Recipe({ recipe, setSelectedRecipe }) {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const remove = (recipe) => {
-    dispatch(removeFromMyRecipes(recipe.id))
-    setSelectedRecipe(null)
-  }
+    dispatch(removeFromMyRecipes(recipe.id));
+    setSelectedRecipe(null);
+  };
   return (
     <RecipesList>
       <RecipesTitle onClick={() => setSelectedRecipe(recipe)}>
@@ -61,7 +62,7 @@ function Recipe({ recipe, setSelectedRecipe }) {
         </RemoveBtn>
       </div>
     </RecipesList>
-  )
+  );
 }
 
-export default Recipe
+export default Recipe;
